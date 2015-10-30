@@ -115,26 +115,6 @@ describe('REST API: ', function() {
       });
     });
 
-    it('should accept string', function(done) {
-      upyun.uploadFile(remoteDir + '/' + fileName, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id molestias ut quisquam, dolores blanditiis nobis labore eum, accusantium dolorem laboriosam est modi sit quam libero aliquam nam corporis nihil rerum.', 'text/plain', true, function(err, result) {
-        if(err) {
-          throw err;
-        }
-        result.statusCode.should.be.exactly(200);
-        done();
-      });
-    });
-
-    it('should accept string and ignore checksum', function(done) {
-      upyun.uploadFile(remoteDir + '/' + fileName, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id molestias ut quisquam, dolores blanditiis nobis labore eum, accusantium dolorem laboriosam est modi sit quam libero aliquam nam corporis nihil rerum.', 'text/plain', false, function(err, result) {
-        if(err) {
-          throw err;
-        }
-        result.statusCode.should.be.exactly(200);
-        done();
-      });
-    });
-
   })
 
 
